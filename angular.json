@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-graphql",
+            "outputPath": "dist/angular-spacex-graphql-codegen",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-graphql:build"
+            "browserTarget": "angular-spacex-graphql-codegen:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-graphql:build:production"
+              "browserTarget": "angular-spacex-graphql-codegen:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-graphql:build"
+            "browserTarget": "angular-spacex-graphql-codegen:build"
           }
         },
         "test": {
@@ -113,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-graphql:serve"
+            "devServerTarget": "angular-spacex-graphql-codegen:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-graphql:serve:production"
+              "devServerTarget": "angular-spacex-graphql-codegen:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "angular-graphql"
+  "defaultProject": "angular-spacex-graphql-codegen"
 }
