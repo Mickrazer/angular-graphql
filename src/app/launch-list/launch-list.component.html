@@ -1,0 +1,62 @@
+<ng-container *ngIf="pastLaunches$ | async as pastLaunches">
+  <main>
+    <section class="container">
+      <h1 class="main__title">SpaceX Ships</h1>
+      <div class="ships" *ngFor="let launch of pastLaunches | paginate: {itemsPerPage: 5, currentPage: page}">
+        <div class="ships__header">
+          <h1 class="ships__title">{{ launch.name }}</h1>
+          <svg [routerLink]="['/', launch.id]" width="16" height="16" viewBox="0 0 16 16" fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M0 9L12.17 9L6.58 14.59L8 16L16 8L8 0L6.59 1.41L12.17 7L0 7L0 9Z" fill="#2962FF"/>
+          </svg>
+        </div>
+        <div class="ships__block">
+          <h2 class="ships__description">Тип <span>{{ launch.type }}</span></h2>
+          <h2 class="ships__description">Порт <span>{{ launch.home_port }}</span></h2>
+        </div>
+      </div>
+      <pagination-controls (pageChange)="page = $event" previousLabel=""
+                           nextLabel=""></pagination-controls>
+    </section>
+    <div class="filter">
+      <h1 class="filter__title">Фильтры</h1>
+      <div class="search">
+        <input type="text" id="search" name="name">
+        <label for="search">Название</label>
+      </div>
+      <div class="search">
+        <div>
+          <input type="text" id="port">
+          <label for="port">Порт</label>
+        </div>
+      </div>
+      <div class="search__type">
+        <div *ngFor="let shipPort of port">
+          <input type="checkbox" id="shipPort">
+          <label for="shipPort">{{shipPort}}</label>
+        </div>
+
+      </div>
+      <div class="filter__radio">
+        <h2>Тип</h2>
+        <div>
+          <input type="radio" id="barge" name="type">
+          <label for="barge">Barge</label>
+        </div>
+        <div>
+          <input type="radio" id="cargo" name="type">
+          <label for="cargo">Cargo</label>
+        </div>
+        <div>
+          <input type="radio" id="HSC" name="type">
+          <label for="HSC">High speed Craft</label>
+        </div>
+        <div>
+          <input type="radio" id="tug" name="type">
+          <label for="tug">Tug</label>
+        </div>
+      </div>
+    </div>
+  </main>
+</ng-container>

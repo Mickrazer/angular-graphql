@@ -1,0 +1,13 @@
+# src/app/launch-details/launch-details.frontend.graphql
+
+query launchDetails($id: ID!) {
+  ship(id: $id) {
+    name
+    year_built
+    weight_kg
+    home_port
+    missions {
+      name
+    }
+  }
+}

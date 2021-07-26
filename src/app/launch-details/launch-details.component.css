@@ -1,0 +1,70 @@
+h1,h2,h3,p{
+  padding: 0;
+  margin: 0;
+}
+
+.container{
+  width: 100vw;
+  padding: 48px 64px;
+}
+
+.ship__back {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #2962FF;
+}
+
+.ship__title{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 33px;
+  color: rgba(0, 0, 0, 0.87);
+  padding: 22px 0 53px;
+}
+
+.ship__back svg{
+  margin-right: 7px;
+}
+
+.ships__block{
+  display: flex;
+  margin: 29px 0;
+}
+
+.ships__description{
+  width: 40%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.87);
+}
+.ships__description span{
+  color: #2962FF;
+  margin-left: 104px;
+}
+.ship__main{
+  width: 50%;
+}
+
+.ship__mission{
+  display: flex;
+  width: 30%;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+.ship__mission p{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 32px;
+  color: #2962FF;
+}

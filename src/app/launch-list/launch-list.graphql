@@ -1,0 +1,8 @@
+query launchList($limit: Int!) {
+  ships(limit: $limit) {
+    name
+    home_port
+    id
+    type
+  }
+}
