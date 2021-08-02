@@ -2,7 +2,7 @@
   <main>
     <section class="container">
       <h1 class="main__title">SpaceX Ships</h1>
-      <div class="ships" *ngFor="let launch of pastLaunches | paginate: {itemsPerPage: 5, currentPage: page}">
+      <div class="ships" *ngFor="let launch of shipsData | paginate: {itemsPerPage: 5, currentPage: page}">
         <div class="ships__header">
           <h1 class="ships__title">{{ launch.name }}</h1>
           <svg [routerLink]="['/', launch.id]" width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -22,7 +22,7 @@
     <div class="filter">
       <h1 class="filter__title">Фильтры</h1>
       <div class="search">
-        <input type="text" id="search" name="name">
+        <input type="text" id="search" name="name" [(ngModel)]="name" (ngModelChange)="Search()">
         <label for="search">Название</label>
       </div>
       <div class="search">
@@ -40,21 +40,9 @@
       </div>
       <div class="filter__radio">
         <h2>Тип</h2>
-        <div>
-          <input type="radio" id="barge" name="type">
-          <label for="barge">Barge</label>
-        </div>
-        <div>
-          <input type="radio" id="cargo" name="type">
-          <label for="cargo">Cargo</label>
-        </div>
-        <div>
-          <input type="radio" id="HSC" name="type">
-          <label for="HSC">High speed Craft</label>
-        </div>
-        <div>
-          <input type="radio" id="tug" name="type">
-          <label for="tug">Tug</label>
+        <div *ngFor="let shipType of type">
+          <input type="radio" id="{{shipType.toLocaleLowerCase()}}" name="type" value="{{shipType}}" (change)="changeRadioButton($event.target.value)">
+          <label for="{{shipType.toLocaleLowerCase()}}">{{shipType}}</label>
         </div>
       </div>
     </div>

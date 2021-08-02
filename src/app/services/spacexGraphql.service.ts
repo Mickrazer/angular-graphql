@@ -1090,6 +1090,9 @@ export type ShipsListQuery = (
   & { ships?: Maybe<Array<Maybe<(
     { __typename?: 'Ship' }
     & Pick<Ship, 'name' | 'home_port' | 'id' | 'type'>
+    )>>>, type?: Maybe<Array<Maybe<(
+    { __typename?: 'Ship' }
+    & Pick<Ship, 'name' | 'home_port' | 'id' | 'type'>
     )>>> }
   );
 
@@ -1128,7 +1131,6 @@ export const ShipsListDocument = gql`
     }
   }
 `;
-
 @Injectable({
   providedIn: 'root'
 })
